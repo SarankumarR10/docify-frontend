@@ -1,0 +1,245 @@
+/* 🌐 Global */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f9fb;
+}
+
+/* 🔲 Layout Wrapper */
+.patient-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: url('../images/healthcare-bg.jpg') center center / cover no-repeat fixed;
+  position: relative;
+}
+
+.patient-dashboard-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 122, 139, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* 🧭 Sidebar */
+.patient-sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #117a8b, #20c997); /* same as doctor dashboard */
+  color: white;
+  padding: 2rem 1.2rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.patient-sidebar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.patient-sidebar-header h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* 🧭 Sidebar Navigation */
+.patient-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.patient-sidebar-nav button {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.patient-sidebar-nav button:hover,
+.patient-sidebar-nav button.active {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+/* 📄 Main Dashboard Area */
+.patient-dashboard-main {
+  flex: 1;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  color: #fff;
+}
+
+/* 🧍 Profile Box */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+/* 👤 Profile Info */
+.profile-info h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e0f7fa;
+}
+
+/* 🧾 Upload Actions */
+.upload-button,
+.remove-button {
+  background-color: #20c997;
+  color: white;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.remove-button {
+  background-color: #dc3545;
+}
+
+.upload-button:hover {
+  background-color: #17a2b8;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* 🏷️ Cards Section */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #003b63;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.dashboard-card h3 {
+  font-size: 1.2rem;
+  color: #117a8b;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .patient-dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .patient-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .patient-sidebar-nav {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .profile-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-sidebar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .upload-button,
+  .remove-button {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .dashboard-card p {
+    font-size: 0.85rem;
+  }
+}

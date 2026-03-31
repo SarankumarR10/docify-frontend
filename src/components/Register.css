@@ -1,0 +1,158 @@
+/* 🌄 Full-page fixed background layout */
+.register-page {
+  background-image: url('../images/healthcare-bg.jpg'); /* Replace with your actual path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 🔒 Keeps background stable while scrolling */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.register-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 122, 139, 0.65); /* Optional overlay tint */
+  backdrop-filter: blur(8px);
+  z-index: 0;
+}
+
+/* 🧊 Glassmorphic Form Container */
+.register-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  color: #e0f7fa;
+}
+
+/* 🏷️ Heading */
+.register-container h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* 🔤 Inputs */
+.register-container input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.register-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.register-container input:focus {
+  border-color: #00ffe1;
+  box-shadow: 0 0 10px rgba(0, 255, 225, 0.3);
+}
+
+/* 🧩 Dropdown (Select) Styling */
+.register-container select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.3s ease;
+}
+
+.register-container select:focus {
+  border-color: #00ffe1;
+  box-shadow: 0 0 10px rgba(0, 255, 225, 0.3);
+}
+
+.register-container select option {
+  background-color: #1a1a1a; /* ✅ Solid background for visibility */
+  color: #ffffff;
+}
+
+/* 🔘 Button */
+.register-container button {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  background: rgba(0, 255, 200, 0.2);
+  color: #00ffcc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
+}
+
+.register-container button:hover {
+  background: rgba(0, 255, 200, 0.35);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 255, 200, 0.45);
+  transform: scale(1.03);
+}
+
+/* 📱 Responsive - Tablets */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 2rem 2rem;
+    max-width: 90%;
+  }
+
+  .register-container h2 {
+    font-size: 1.7rem;
+  }
+
+  .register-container input,
+  .register-container select,
+  .register-container button {
+    font-size: 1rem;
+  }
+}
+
+/*  Responsive - Mobiles */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .register-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .register-container input,
+  .register-container select,
+  .register-container button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}

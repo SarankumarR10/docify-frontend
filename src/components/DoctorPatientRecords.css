@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🌫️ Main Container */
+.records-container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.1);
+  color: #e6faff;
+}
+
+/* 🏷️ Heading */
+.records-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* 🔍 Search */
+.search-bar {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  outline: none;
+  backdrop-filter: blur(10px);
+  transition: border 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar input:focus {
+  border-color: #00f0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* 🔽 Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border-radius: 0 0 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  z-index: 1000;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  color: #eaffff;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 255, 255, 0.15);
+}
+
+/* 👤 Selected Patient Info */
+.selected-patient-info {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  color: #e8fcff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.selected-patient-info h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 🧾 Record List */
+.record-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 📄 Record Card */
+.record-card {
+  background: rgba(0, 0, 0, 0.2); /* Improved contrast */
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px 24px;
+  color: #eaffff;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.25);
+}
+
+.record-card strong {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.record-card span {
+  color: #bafcff;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* 📎 View Button */
+.download-link {
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: rgba(0, 255, 200, 0.2);
+  border: 1px solid rgba(0, 255, 200, 0.4);
+  color: #00ffcc;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 6px rgba(0, 255, 200, 0.2);
+}
+
+.download-link:hover {
+  background: rgba(0, 255, 200, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
+}
+
+/* 🖼️ Optional Image Preview */
+.record-preview-image {
+  margin-top: 10px;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.record-preview-image:hover {
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .records-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .records-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .record-card {
+    padding: 16px;
+  }
+
+  .download-link {
+    width: 100%;
+  }
+
+  .record-preview-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .records-container {
+    padding: 16px;
+  }
+
+  .records-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .record-card strong {
+    font-size: 15px;
+  }
+
+  .record-card span {
+    font-size: 13px;
+  }
+
+  .download-link {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

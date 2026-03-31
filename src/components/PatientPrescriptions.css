@@ -1,0 +1,108 @@
+/* Container */
+.prescriptions-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02); /* more transparent */
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0f0; /* brighter */
+}
+
+/* Header */
+.prescriptions-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0, 255, 225, 0.2);
+}
+
+/* Prescription Card */
+.prescription-card {
+  background: rgba(255, 255, 255, 0.03); /* lighter background */
+  padding: 22px 28px;
+  border-left: 4px solid rgba(0, 255, 200, 0.15);
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.prescription-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #eeeeee; /* brighter content */
+}
+
+.prescription-card strong {
+  color: #8fffea;
+  font-weight: 600;
+}
+
+/* Download Button */
+.download-btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #20c997, #159895);
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(32, 201, 151, 0.3);
+}
+
+.download-btn:hover {
+  background: linear-gradient(to right, #159895, #117a8b);
+  transform: scale(1.03);
+  box-shadow: 0 0 14px rgba(0, 255, 200, 0.2);
+}
+
+/* 🔽 Responsive Styles */
+@media (max-width: 768px) {
+  .prescriptions-container {
+    padding: 20px;
+  }
+
+  .prescriptions-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .prescription-card {
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prescriptions-container {
+    padding: 15px;
+  }
+
+  .prescriptions-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .prescription-card {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100%;
+  }
+}

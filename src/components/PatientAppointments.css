@@ -1,0 +1,293 @@
+/* Container */
+.appointment-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  backdrop-filter: blur(22px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.25);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+/* Heading */
+.appointment-container h2 {
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Search input */
+.doctor-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  outline: none;
+}
+
+.doctor-search::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Doctor dropdown */
+.doctor-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Doctor item */
+.doctor-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.doctor-item:hover {
+  background-color: rgba(0, 255, 200, 0.1);
+  border-color: #00ffe1;
+}
+
+.doctor-item.selected {
+  background-color: rgba(0, 255, 200, 0.15);
+  border: 2px solid #00ffe1;
+}
+
+/* Doctor avatar */
+.doctor-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #ccc;
+}
+
+/* Doctor info */
+.doctor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #00ffe1;
+}
+
+.doctor-specialization,
+.doctor-location {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Form */
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.appointment-form input,
+.appointment-form textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  outline: none;
+}
+
+.appointment-form input::placeholder,
+.appointment-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.appointment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Submit Button */
+.appointment-form button {
+  background: linear-gradient(to right, #17c1b8, #1dbfaf);
+  color: #003b63;
+  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 200, 0.25);
+  width: fit-content;
+}
+
+.appointment-form button:hover {
+  background: linear-gradient(to right, #20c997, #159895);
+  color: #ffffff;
+  transform: scale(1.04);
+  box-shadow: 0 0 14px rgba(0, 255, 200, 0.4);
+}
+
+/* Select Dropdown */
+select {
+  margin-top: 8px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  outline: none;
+  backdrop-filter: blur(10px);
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+select option {
+  color: #003b63;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+/* Appointment Cards */
+.appointments-list {
+  margin-top: 30px;
+}
+
+.appointment-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 5px solid #00ffe1;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+}
+
+.appointment-card p {
+  margin: 5px 0;
+  font-size: 0.98rem;
+  color: #ffffff;
+}
+
+.appointment-card strong {
+  color: #00ffe1;
+}
+
+/* Join Consultation Button */
+.join-consultation-btn {
+  margin-top: 10px;
+  background: linear-gradient(to right, #249f51, #27c56a);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.25);
+}
+
+.join-consultation-btn:hover {
+  background: linear-gradient(to right, #218838, #27ae60);
+  box-shadow: 0 0 14px rgba(40, 167, 69, 0.4);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .appointment-container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .appointment-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .doctor-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .doctor-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .appointment-form input,
+  .appointment-form textarea {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .appointment-form button,
+  .join-consultation-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-name {
+    font-size: 1rem;
+  }
+
+  .doctor-specialization,
+  .doctor-location {
+    font-size: 0.9rem;
+  }
+
+  .appointment-card p {
+    font-size: 0.9rem;
+  }
+
+  .doctor-search {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .appointment-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .appointment-form button,
+  .join-consultation-btn {
+    font-size: 0.95rem;
+  }
+}
